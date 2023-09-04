@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <preConditions onFailMessage="You are not running on a supported dbms: postgresql">
+        <or>
+            <dbms type="postgresql"/>
+        </or>
+    </preConditions>
+
+    <include file="db/changelog/migration/1.0.1_migrate-customers_create.xml"/>
+    <include file="db/changelog/migration/1.0.2_migrate-offer_create.xml"/>
+
+</databaseChangeLog>
